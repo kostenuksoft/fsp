@@ -66,3 +66,16 @@ vcpkg_installed/
 # test output & cache
 Testing/
 .cache/
+
+__pycache__/
+re/orig/
+re/ghidra_proj/
+re/out/
+re/gui/
+re/ref/
+engine/gen/
+plugin/sdk/
+plugin/fsp_glyphs.h
+plugin/fsp_glyphs.cpp
+plugin/fsp_regprobe.h
+plugin/fsp_regprobe.cpp

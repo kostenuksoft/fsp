@@ -1,0 +1,8 @@
+* text=auto
+*.sh text eol=lf
+*.py text eol=lf
+*.bat text eol=crlf
+*.png binary
+*.pkl binary
+*.glyph binary
+*.bin binary
