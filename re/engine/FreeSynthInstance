@@ -1,0 +1,25 @@
+FreeSynthInstance
+FLSPro.dll, address 0x10003050, 99 bytes
+int __stdcall FreeSynthInstance(int instance)
+
+undefined4 FreeSynthInstance(int param_1)
+
+{
+  int iVar1;
+
+  if ((-1 < param_1) && (param_1 < 0x80)) {
+    if ((&DAT_1002a1f0)[param_1] == 0) {
+      return 0xffffffff;
+    }
+    FUN_10007560(param_1);
+    iVar1 = 0;
+    do {
+      LUClearSoundFont(param_1,iVar1);
+      iVar1 = iVar1 + 1;
+    } while (iVar1 < 0x80);
+    FUN_10002d90(param_1);
+    FUN_10002260(0,3);
+    return 0;
+  }
+  return 0xfffffffe;
+}

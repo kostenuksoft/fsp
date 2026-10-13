@@ -1,0 +1,25 @@
+SetAttenuation
+FLSPro.dll, address 0x1000E360, 93 bytes
+int __stdcall SetAttenuation(int instance, int value)
+
+int SetAttenuation(int param_1,int param_2)
+
+{
+  int iVar1;
+  float10 fVar2;
+
+  if (param_2 < 0) {
+    param_2 = 0;
+  }
+  else if (0x60 < param_2) {
+    param_2 = 0x60;
+  }
+  fVar2 = (float10)FUN_10011370();
+  iVar1 = 0;
+  (&DAT_10023ae0)[param_1] = (float)(fVar2 * (float10)_DAT_1001a3a8);
+  do {
+    FUN_100053d0(param_1,iVar1);
+    iVar1 = iVar1 + 1;
+  } while (iVar1 < 0x10);
+  return param_2;
+}

@@ -1,0 +1,212 @@
+LULoadSoundFont
+FLSPro.dll, address 0x1000DF10, 1006 bytes
+int __stdcall LULoadSoundFont(int instance, int, int, const char *path, int)
+
+int LULoadSoundFont(int param_1,int param_2,int param_3,uint *param_4,LONG param_5)
+
+{
+  int *piVar1;
+  char cVar2;
+  int iVar3;
+  int iVar4;
+  int *piVar5;
+  undefined *puVar6;
+  bool bVar7;
+  bool bVar8;
+  DWORD DVar9;
+  undefined3 extraout_var;
+  int iVar10;
+  byte *pbVar11;
+  DWORD DVar12;
+  uint uVar13;
+  void *extraout_ECX;
+  void *extraout_ECX_00;
+  void *pvVar14;
+  uint *puVar15;
+  char *pcVar16;
+  int iVar17;
+  int iVar18;
+  uint *puVar19;
+  undefined4 *puVar20;
+  int iStack_24;
+  int iStack_20;
+  int iStack_1c;
+  int iStack_18;
+  int iStack_14;
+  undefined4 *puStack_10;
+  int iStack_c;
+  int iStack_8;
+  int iStack_4;
+
+  puVar15 = param_4;
+  bVar7 = false;
+  DVar9 = timeGetTime();
+  _DAT_10100008 = 1;
+  bVar8 = FUN_10002a60();
+  thunk_FUN_1000e330(param_1,param_3);
+  if (param_2 != 0) goto LAB_1000e01b;
+  if (param_4 == (uint *)0x0) {
+LAB_1000df9d:
+    pcVar16 = _strrchr((char *)param_4,0x5c);
+    if (pcVar16 != (char *)0x0) {
+      param_4 = (uint *)(pcVar16 + 1);
+    }
+    FUN_1000b330((char *)param_4);
+  }
+  else {
+    uVar13 = 0xffffffff;
+    puVar19 = param_4;
+    do {
+      if (uVar13 == 0) break;
+      uVar13 = uVar13 - 1;
+      cVar2 = *(char *)puVar19;
+      puVar19 = (uint *)((int)puVar19 + 1);
+    } while (cVar2 != '\0');
+    if (~uVar13 - 1 < 5) goto LAB_1000df9d;
+    uVar13 = 0xffffffff;
+    puVar19 = param_4;
+    do {
+      if (uVar13 == 0) break;
+      uVar13 = uVar13 - 1;
+      cVar2 = *(char *)puVar19;
+      puVar19 = (uint *)((int)puVar19 + 1);
+    } while (cVar2 != '\0');
+    pvVar14 = (void *)((~uVar13 - 5) + (int)param_4);
+    uVar13 = FUN_100198e0(pvVar14,(byte *)pvVar14,&DAT_10023ec8);
+    if (uVar13 != 0) goto LAB_1000df9d;
+    bVar7 = true;
+  }
+  iVar18 = 0;
+  param_4 = &DAT_10100010;
+  do {
+    iVar10 = FUN_10003130(iVar18);
+    if (iVar10 != 0) {
+      iVar10 = 0;
+      pvVar14 = extraout_ECX;
+      puVar19 = param_4;
+      do {
+        if ((((*puVar19 != 0) && (pbVar11 = (byte *)(*puVar19 + 0x40), pbVar11 != (byte *)0x0)) &&
+            (puVar15 != (uint *)0x0)) &&
+           (uVar13 = FUN_100198e0(pvVar14,pbVar11,(byte *)puVar15), pvVar14 = extraout_ECX_00,
+           uVar13 == 0)) {
+          (&DAT_10100010)[param_1 * 0x80 + param_3] = (&DAT_10100010)[iVar18 * 0x80 + iVar10];
+          iVar18 = (&DAT_10100010)[iVar18 * 0x80 + iVar10];
+          *(int *)(iVar18 + 0x144) = *(int *)(iVar18 + 0x144) + 1;
+          return 0;
+        }
+        iVar10 = iVar10 + 1;
+        puVar19 = puVar19 + 1;
+      } while (iVar10 < 0x7f);
+    }
+    param_4 = param_4 + 0x80;
+    iVar18 = iVar18 + 1;
+  } while ((int)param_4 < 0x10110010);
+LAB_1000e01b:
+  if (DAT_10110010 == (undefined4 *)0x0) {
+    DAT_10110010 = (undefined4 *)_malloc(0x801fc);
+    if (DAT_10110010 == (undefined4 *)0x0) {
+      return -1;
+    }
+  }
+  puVar20 = DAT_10110010;
+  for (iVar18 = 0x2007f; iVar18 != 0; iVar18 = iVar18 + -1) {
+    *puVar20 = 0;
+    puVar20 = puVar20 + 1;
+  }
+  FUN_10009bf0(param_1,param_3,0);
+  if (((param_2 == 0) || (param_2 == 1)) || (param_2 == 2)) {
+    if (bVar7) {
+      iVar18 = FUN_1000b9f0(param_1,puVar15,DAT_100bae00,1);
+    }
+    else {
+      iVar18 = FUN_1000ef80(param_1,puVar15,param_2,param_5,param_3);
+    }
+    if (iVar18 != 0) {
+      if (DAT_100bb32c != (HWND)0x0) {
+        DVar12 = timeGetTime();
+        uVar13 = DVar12 - DVar9;
+        while (uVar13 < 2000) {
+          Sleep(100);
+          DVar12 = timeGetTime();
+          uVar13 = DVar12 - DVar9;
+        }
+        DestroyWindow(DAT_100bb32c);
+      }
+      DAT_100bb32c = (HWND)0x0;
+      return iVar18;
+    }
+    if ((param_2 == 0) && ((&DAT_10100010)[param_1 * 0x80 + param_3] != 0)) {
+      pcVar16 = (char *)((&DAT_10100010)[param_1 * 0x80 + param_3] + 0x40);
+      do {
+        cVar2 = *(char *)puVar15;
+        puVar15 = (uint *)((int)puVar15 + 1);
+        *pcVar16 = cVar2;
+        pcVar16 = pcVar16 + 1;
+      } while (cVar2 != '\0');
+    }
+    iVar18 = 0;
+    piVar1 = &DAT_10100010 + param_1 * 0x80 + param_3;
+    param_2 = 0x148;
+    do {
+      if ((*piVar1 != 0) && (*(int *)(param_2 + *piVar1) != 0)) {
+        iVar10 = 0;
+        do {
+          if (((*piVar1 != 0) && (iVar3 = *(int *)(param_2 + *piVar1), iVar3 != 0)) &&
+             (iVar4 = *(int *)(*(int *)(iVar3 + 0x4000) + iVar10 * 4), iVar4 != 0)) {
+            iStack_18 = 0;
+            iVar17 = 0;
+            do {
+              piVar5 = *(int **)(iVar4 + iVar17 * 4);
+              if (piVar5 != (int *)0x0) {
+                iStack_18 = iStack_18 + *piVar5;
+              }
+              iVar17 = iVar17 + 1;
+            } while (iVar17 < 0x20);
+            iStack_4 = param_1;
+            iStack_24 = 1;
+            puStack_10 = DAT_10110010;
+            iStack_c = param_3;
+            iStack_20 = iVar10;
+            iStack_1c = iVar4;
+            iStack_14 = iVar3;
+            iStack_8 = iVar18;
+            FUN_1000c0f0(&iStack_24);
+          }
+          iVar10 = iVar10 + 1;
+        } while (iVar10 < 0x80);
+      }
+      param_2 = param_2 + 4;
+      iVar18 = iVar18 + 1;
+    } while (param_2 < 0x34c);
+    iVar18 = 0;
+    if (0 < *(int *)(*piVar1 + 0x34c)) {
+      do {
+        puVar6 = (undefined *)DAT_10110010[iVar18];
+        if ((puVar6 != (undefined *)0x0) && (puVar6[0x3a] != '\0')) {
+          thunk_FUN_10010fe5(puVar6);
+          DAT_10110010[iVar18] = 0;
+        }
+        iVar18 = iVar18 + 1;
+      } while (iVar18 < *(int *)(*piVar1 + 0x34c));
+    }
+  }
+  if (CONCAT31(extraout_var,bVar8) != 0) {
+    FUN_10002a70();
+  }
+  if (DAT_10110010 != (undefined4 *)0x0) {
+    FUN_10010fe5((undefined *)DAT_10110010);
+    DAT_10110010 = (undefined4 *)0x0;
+  }
+  if (DAT_100bb32c != (HWND)0x0) {
+    DVar12 = timeGetTime();
+    uVar13 = DVar12 - DVar9;
+    while (uVar13 < 2000) {
+      Sleep(100);
+      DVar12 = timeGetTime();
+      uVar13 = DVar12 - DVar9;
+    }
+    DestroyWindow(DAT_100bb32c);
+  }
+  DAT_100bb32c = (HWND)0x0;
+  return 0;
+}

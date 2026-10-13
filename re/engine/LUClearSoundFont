@@ -1,0 +1,10 @@
+LUClearSoundFont
+FLSPro.dll, address 0x1000E310, 23 bytes
+int __stdcall LUClearSoundFont(int instance, int)
+
+undefined4 LUClearSoundFont(int param_1,int param_2)
+
+{
+  thunk_FUN_1000e330(param_1,param_2);
+  return 0;
+}

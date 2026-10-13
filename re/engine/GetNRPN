@@ -1,0 +1,25 @@
+GetNRPN
+FLSPro.dll, address 0x100032E0, 109 bytes
+int __stdcall GetNRPN(int instance, int channel, int number)
+
+undefined4 GetNRPN(int param_1,int param_2,int param_3)
+
+{
+  int iVar1;
+  undefined4 uVar2;
+
+  iVar1 = (&DAT_100bb538)[param_1] + 0x13ad0 + param_2 * 200;
+  if ((param_3 < 0) || (0x1a < param_3)) {
+    uVar2 = 0x8000;
+  }
+  else if (iVar1 == 0) {
+    uVar2 = 0x8000;
+  }
+  else if ((*(int *)(iVar1 + 0x58) >> ((byte)param_3 & 0x1f) & 1U) == 0) {
+    uVar2 = 0x8000;
+  }
+  else {
+    uVar2 = *(undefined4 *)(iVar1 + 0x5c + param_3 * 4);
+  }
+  return uVar2;
+}

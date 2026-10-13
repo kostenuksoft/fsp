@@ -1,0 +1,105 @@
+LoadEngine
+Fruity Soundfont Player.dll, address 0x00508930, 369 bytes
+binds the exports of FLSPro.dll
+
+void FUN_00508930(LPCSTR param_1,int *param_2)
+{
+  int iVar1;
+  undefined extraout_CL;
+  undefined extraout_CL_00;
+  undefined extraout_CL_01;
+  undefined extraout_CL_02;
+  undefined extraout_CL_03;
+  undefined extraout_CL_04;
+  undefined extraout_CL_05;
+  undefined extraout_CL_06;
+  undefined extraout_CL_07;
+  undefined extraout_CL_08;
+  undefined extraout_CL_09;
+  undefined extraout_CL_10;
+  undefined extraout_CL_11;
+  undefined extraout_CL_12;
+  undefined extraout_CL_13;
+  undefined extraout_CL_14;
+  undefined extraout_CL_15;
+  undefined extraout_CL_16;
+  undefined extraout_DL;
+  undefined extraout_DL_00;
+  undefined extraout_DL_01;
+  undefined extraout_DL_02;
+  undefined extraout_DL_03;
+  undefined extraout_DL_04;
+  undefined extraout_DL_05;
+  undefined extraout_DL_06;
+  undefined extraout_DL_07;
+  undefined extraout_DL_08;
+  undefined extraout_DL_09;
+  undefined extraout_DL_10;
+  undefined extraout_DL_11;
+  undefined extraout_DL_12;
+  undefined extraout_DL_13;
+  undefined extraout_DL_14;
+  undefined extraout_DL_15;
+  undefined extraout_DL_16;
+  int *in_FS_OFFSET;
+  int in_stack_ffffff50;
+  int iStack_20;
+  undefined *puStack_1c;
+  undefined *puStack_18;
+  longlong *local_8;
+  puStack_18 = &stack0xfffffffc;
+  local_8 = (longlong *)0x0;
+  puStack_1c = &LAB_00508aa1;
+  iStack_20 = *in_FS_OFFSET;
+  *in_FS_OFFSET = (int)&iStack_20;
+  FUN_00407e74(&local_8,param_1);
+  iVar1 = FUN_0042421c((int)local_8,0x8000);
+  *param_2 = iVar1;
+  if (iVar1 != 0) {
+    iVar1 = FUN_0040d388((char)iVar1,extraout_DL,extraout_CL,iVar1,L"InitSynthInstance");
+    param_2[1] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_00,extraout_CL_00,*param_2,L"FreeSynthInstance")
+    ;
+    param_2[2] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_01,extraout_CL_01,*param_2,L"LULoadSoundFont");
+    param_2[3] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_02,extraout_CL_02,*param_2,L"LUClearSoundFont");
+    param_2[4] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_03,extraout_CL_03,*param_2,L"GetInstrPatchName")
+    ;
+    param_2[5] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_04,extraout_CL_04,*param_2,L"GetSubBankCount");
+    param_2[6] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_05,extraout_CL_05,*param_2,L"GetSubBanksFilled")
+    ;
+    param_2[7] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_06,extraout_CL_06,*param_2,L"GetBankName");
+    param_2[8] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_07,extraout_CL_07,*param_2,L"SetUseReverb");
+    param_2[9] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_08,extraout_CL_08,*param_2,L"SetUseChorus");
+    param_2[10] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_09,extraout_CL_09,*param_2,L"SetAttenuation");
+    param_2[0xb] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_10,extraout_CL_10,*param_2,L"SetPolyphony");
+    param_2[0xc] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_11,extraout_CL_11,*param_2,L"AllocateNote");
+    param_2[0xd] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_12,extraout_CL_12,*param_2,L"RenderVoices");
+    param_2[0xe] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_13,extraout_CL_13,*param_2,L"FreeNote");
+    param_2[0xf] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_14,extraout_CL_14,*param_2,L"QueueShortMessage")
+    ;
+    param_2[0x10] = iVar1;
+    iVar1 = FUN_0040d388((char)*param_2,extraout_DL_15,extraout_CL_15,*param_2,L"GetNRPN");
+    param_2[0x11] = iVar1;
+    in_stack_ffffff50 = *param_2;
+    iVar1 = FUN_0040d388((char)in_stack_ffffff50,extraout_DL_16,extraout_CL_16,in_stack_ffffff50,
+                         L"SetNRPN");
+    param_2[0x12] = iVar1;
+  }
+  *in_FS_OFFSET = in_stack_ffffff50;
+  FUN_004070a8((int *)&local_8);
+  return;
+}

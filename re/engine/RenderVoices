@@ -1,0 +1,11 @@
+RenderVoices
+FLSPro.dll, address 0x100030C0, 62 bytes
+int __stdcall RenderVoices(int instance, int, float *dest, int frames, int add, float *reverb, float *chorus, float reverbLevel, float chorusLevel)
+
+void RenderVoices(undefined1 (*param_1) [10],int param_2,float *param_3,float *param_4,uint param_5,
+                 int param_6,float *param_7,float *param_8)
+
+{
+  FUN_100023b0(param_1,(void *)0x1,0,param_3,param_4,0,param_2,param_5,param_6,param_7,param_8);
+  return;
+}

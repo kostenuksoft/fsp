@@ -1,0 +1,21 @@
+InitSynthInstance
+FLSPro.dll, address 0x10002FF0, 95 bytes
+int __stdcall InitSynthInstance(int *instance, unsigned sampleRate)
+
+int InitSynthInstance(int *param_1,uint param_2)
+
+{
+  int iVar1;
+  undefined local_4 [4];
+
+  FUN_10002260(0,2);
+  if (param_2 != 0) {
+    FUN_10009de0(param_2);
+  }
+  iVar1 = FUN_10002ab0(param_1,(undefined1 (**) [10])0xffffffff,0,0,0,(uint *)&DAT_100bae44,0,
+                       local_4,(int *)0x4,(void *)0x0,0);
+  if (iVar1 == 0) {
+    FUN_100074a0(*param_1);
+  }
+  return iVar1;
+}

@@ -1,0 +1,48 @@
+UpdatePatchName
+Fruity Soundfont Player.dll, address 0x0050B9BC, 251 bytes
+
+void FUN_0050b9bc(int param_1)
+{
+  int iVar1;
+  longlong *plVar2;
+  undefined4 uVar3;
+  undefined4 *in_FS_OFFSET;
+  undefined4 uStack_20;
+  undefined *puStack_1c;
+  undefined *puStack_18;
+  longlong *local_c;
+  longlong *local_8;
+  puStack_18 = &stack0xfffffffc;
+  local_8 = (longlong *)0x0;
+  local_c = (longlong *)0x0;
+  puStack_1c = &LAB_0050bab7;
+  uStack_20 = *in_FS_OFFSET;
+  *in_FS_OFFSET = &uStack_20;
+  if (*(int *)(param_1 + 0xf0) == 9) {
+    puStack_18 = &stack0xfffffffc;
+    plVar2 = (longlong *)(*DAT_0056a63c)();
+    FUN_00407748(&local_8,plVar2,0);
+  }
+  else {
+    plVar2 = (longlong *)(*DAT_0056a63c)();
+    FUN_00407748(&local_8,plVar2,0);
+  }
+  if (local_8 == (longlong *)0x0) {
+    FUN_0040754c((int *)&local_8,0x50bad0);
+    uVar3 = 0x86856f;
+  }
+  else {
+    if (*(int *)(param_1 + 0xf0) == 9) {
+      FUN_0040782c(&local_8,(longlong *)" (DrumKit)");
+    }
+    uVar3 = 0x3d98ff;
+  }
+  iVar1 = *(int *)(*(int *)(param_1 + 0x98) + 0x39c);
+  FUN_00407e74(&local_c,(LPCSTR)local_8);
+  FUN_0046dfc0(iVar1,(uint)local_c);
+  FUN_004c08a0(*(int *)(iVar1 + 0x1cc),uVar3);
+  *in_FS_OFFSET = 0;
+  FUN_004070a8((int *)&local_c);
+  FUN_004070cc((int *)&local_8);
+  return;
+}

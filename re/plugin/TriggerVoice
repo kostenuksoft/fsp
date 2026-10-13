@@ -1,0 +1,21 @@
+TriggerVoice
+Fruity Soundfont Player.dll, address 0x0050BF04, 214 bytes
+
+int FUN_0050bf04(undefined param_1,undefined param_2,undefined param_3,int param_4,int param_5,
+                undefined4 param_6)
+{
+  int iVar1;
+  FUN_004048d4(SUB41(*(float *)(param_5 + 4),0),param_2,param_3,
+               (undefined1  [10])
+               ((float10)*(float *)(param_5 + 4) * (float10)_DAT_0050bfdc + (float10)_DAT_0050bfe0))
+  ;
+  FUN_00404908();
+  DAT_0056a680 = *(undefined4 *)(param_4 + 0x94);
+  FUN_00404908();
+  iVar1 = (*DAT_0056a65c)();
+  if (iVar1 < 0) {
+    (**(code **)(**(int **)(param_4 + 0x94) + 0x14))();
+    iVar1 = -1;
+  }
+  return iVar1;
+}

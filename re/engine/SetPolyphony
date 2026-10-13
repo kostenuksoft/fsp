@@ -1,0 +1,17 @@
+SetPolyphony
+FLSPro.dll, address 0x10007450, 65 bytes
+int __stdcall SetPolyphony(int instance, int voices)
+
+int SetPolyphony(int param_1,int param_2)
+
+{
+  if (0x80 < param_2) {
+    param_2 = 0x80;
+  }
+  if (param_2 < 1) {
+    param_2 = 1;
+  }
+  *(undefined2 *)((&DAT_100bb538)[param_1] + 0x14770) = (undefined2)param_2;
+  FUN_10007870();
+  return param_2;
+}

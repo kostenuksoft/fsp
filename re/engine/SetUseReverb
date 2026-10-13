@@ -1,0 +1,10 @@
+SetUseReverb
+FLSPro.dll, address 0x10009B70, 18 bytes
+int __stdcall SetUseReverb(int instance, int on)
+
+void SetUseReverb(int param_1,undefined4 param_2)
+
+{
+  *(undefined4 *)(&DAT_100bbf20 + param_1 * 4) = param_2;
+  return;
+}

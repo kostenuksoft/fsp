@@ -1,0 +1,73 @@
+Create
+Fruity Soundfont Player.dll, address 0x0050B7A8, 378 bytes
+constructor of the plugin object
+
+int * FUN_0050b7a8(int *param_1,char param_2,int param_3,int param_4)
+{
+  undefined4 *puVar1;
+  undefined4 uVar2;
+  int iVar3;
+  int extraout_ECX;
+  char extraout_DL;
+  int iVar4;
+  undefined4 *in_FS_OFFSET;
+  undefined4 in_stack_ffffffd8;
+  undefined4 in_stack_ffffffdc;
+  undefined4 in_stack_ffffffe0;
+  undefined4 in_stack_ffffffe4;
+  int local_c;
+  if (param_2 != '\0') {
+    param_1 = (int *)FUN_004059ac((int)param_1,param_2,param_3,in_stack_ffffffd8,in_stack_ffffffdc,
+                                  in_stack_ffffffe0,in_stack_ffffffe4);
+    param_3 = extraout_ECX;
+    param_2 = extraout_DL;
+  }
+  if (*(int *)PTR_DAT_0056249c == 0) {
+    uVar2 = FUN_0044c7f4((int *)PTR_LAB_0050a15c,'\x01',0);
+    *(undefined4 *)PTR_DAT_0056249c = uVar2;
+  }
+  FUN_0050817c(param_1,'\0',param_3,param_4);
+  param_1[2] = (int)&DAT_00561f30;
+  _DAT_00561f3c = _DAT_00561f3c & 0xffdfffff;
+  param_1[0x45] = 0;
+  DAT_0056a680 = param_1[0x25];
+  FUN_0050add4((int)param_1);
+  iVar3 = FUN_004a1844((int *)PTR_PTR_LAB_00549ad0,'\x01',(int *)0x0);
+  param_1[0x26] = iVar3;
+  *(int **)(iVar3 + 0x3ec) = param_1;
+  iVar4 = 0;
+  do {
+    param_1[iVar4 * 3 + 0x3f] = -1;
+    iVar4 = iVar4 + 1;
+  } while (iVar4 != 2);
+  iVar4 = 0;
+  do {
+    uVar2 = FUN_0040565c(*(int **)(iVar3 + 0x3f0 + iVar4 * 4),(int)PTR_LAB_004efd34);
+    if ((char)uVar2 != '\0') {
+      param_1[iVar4 + 0x2d] = *(int *)(*(int *)(iVar3 + 0x3f0 + iVar4 * 4) + 0x1e8);
+    }
+    iVar4 = iVar4 + 1;
+  } while (iVar4 != 0xd);
+  local_c = *(int *)(param_1[2] + 0x10);
+  if (-1 < local_c + -1) {
+    do {
+      (**(code **)(*param_1 + 0x18))();
+      (**(code **)(*param_1 + 0x18))();
+      local_c = local_c + -1;
+    } while (local_c != 0);
+  }
+  puVar1 = DAT_0056a674;
+  if (DAT_0056a674[2] == DAT_0056a674[3]) {
+    FUN_004c2d84(DAT_0056a674);
+  }
+  *(int **)(puVar1[1] + puVar1[2] * 4) = param_1;
+  puVar1[2] = puVar1[2] + 1;
+  (***(code ***)param_1[0x25])();
+  puVar1 = (undefined4 *)param_1[0x25];
+  (**(code **)*puVar1)();
+  if (param_2 != '\0') {
+    FUN_00405a04(param_1);
+    *in_FS_OFFSET = puVar1;
+  }
+  return param_1;
+}

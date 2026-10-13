@@ -1,0 +1,31 @@
+FreeNote
+FLSPro.dll, address 0x10007790, 219 bytes
+int __stdcall FreeNote(int instance, int note, int, int kill)
+
+undefined4 FreeNote(void *param_1,ushort *param_2,int param_3,int param_4)
+
+{
+  BOOL BVar1;
+  int local_c;
+
+  if ((param_4 == 3) || (param_4 == 4)) {
+    if (param_4 == 3) {
+      param_4 = 0;
+    }
+    else {
+      param_4 = 4;
+    }
+    for (local_c = 0; local_c < 0x80; local_c = local_c + 1) {
+      FreeNote(param_1,(ushort *)(local_c * 0xe8 + *(int *)(DAT_100bae48 + (int)param_1 * 4)),
+               param_3,param_4);
+    }
+  }
+  else {
+    BVar1 = IsBadCodePtr((FARPROC)param_2);
+    if ((BVar1 == 0) && (*(int *)(param_2 + 0x68) != 0)) {
+      FUN_10006050(param_1,DAT_10110194,*(char *)(param_2 + 100),(int)param_2,(uint)*param_2,param_3
+                   ,(int)param_2,param_4);
+    }
+  }
+  return 0;
+}

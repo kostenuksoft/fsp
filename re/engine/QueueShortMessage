@@ -1,0 +1,10 @@
+QueueShortMessage
+FLSPro.dll, address 0x10003110, 25 bytes
+int __stdcall QueueShortMessage(int instance, int message, int)
+
+void QueueShortMessage(undefined1 (*param_1) [10],int param_2,undefined4 param_3)
+
+{
+  waveTableOutShortMsg(param_1,param_2,0,param_3);
+  return;
+}
