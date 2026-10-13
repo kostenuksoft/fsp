@@ -2,6 +2,8 @@
 
 Fruity Soundfont Player from FL Studio 11, rebuilt so it loads in the 64-bit version of FL. There is a 32-bit build as well.
 
+![The editor](docs/editor.png) ![The patch explorer, filtered by a search](docs/explorer.png)
+
 The sound still comes from the original LiveSynth Pro engine. On x64 the engine is statically recompiled from the original `FLSPro.dll` and compiled into the plugin. On x32 the plugin loads that DLL as it always did. The editor is redrawn from the original artwork. It also has a list of recent soundfonts, a patch explorer you can search, menus that look like FL's own, value tooltips, and a prompt for typing an exact value.
 
 Only the code written for this rebuild is in the repository. Image-Line's files are not, so you have to bring a few things yourself before it builds.
